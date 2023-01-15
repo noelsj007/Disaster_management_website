@@ -10,9 +10,10 @@ from .models import *
 from django.views import generic
 from django.contrib.gis.geos import Point
 from django.contrib.gis.db.models.functions import Distance
+from disaster_report.models import Disaster_report
 
-longitude = 11.881864
-latitude = 75.394191
+longitude = Disaster_report().longitude
+latitude = Disaster_report().latitude
 
 user_location = Point(longitude, latitude, srid=4326)
 
@@ -25,8 +26,8 @@ class NearVolunteer(generic.ListView):
     ).order_by('distance')[0:3]
     template_name = 'nearvolunteers.html'
 
-longitude = 12.881864
-latitude = 76.394191
+longitude = Disaster_report().longitude
+latitude = Disaster_report().latitude
 service_location = Point(longitude, latitude, srid=4326)
 
 class NearService(generic.ListView):
@@ -70,5 +71,3 @@ def ServiceRegisterPage(request):
             # messages.success(request, 'Account Created for ' + user + ' Please login')
             return redirect('home')
     return render(request, 'serviceregister.html', {'form': form})
-
-

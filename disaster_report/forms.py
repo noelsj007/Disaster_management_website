@@ -9,3 +9,8 @@ mode_of_transport = [
   ("Walking","walking"),
   ("Transit","transit"),
 ]
+class DisasterForm(ModelForm):
+
+    class Meta:
+        model = Disaster_report
+        fields = ['name', 'zipcode', 'city', 'country', 'adress', 'latitude', 'longitude',  'images']

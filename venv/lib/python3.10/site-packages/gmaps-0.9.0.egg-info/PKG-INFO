@@ -1,0 +1,32 @@
+Metadata-Version: 2.1
+Name: gmaps
+Version: 0.9.0
+Summary: Google maps plugin for Jupyter notebooks
+Home-page: https://github.com/pbugnion/gmaps
+Author: Pascal Bugnion
+Author-email: pascal@bugnion.org
+License: UNKNOWN
+Keywords: ipython,jupyter,widgets
+Platform: UNKNOWN
+Classifier: Development Status :: 4 - Beta
+Classifier: Framework :: IPython
+Classifier: Intended Audience :: Developers
+Classifier: Intended Audience :: Science/Research
+Classifier: Topic :: Multimedia :: Graphics
+Classifier: Programming Language :: Python :: 2
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Programming Language :: Python :: 3.6
+License-File: LICENSE.txt
+
+
+`gmaps` is a Jupyter plugin for embedding Google maps in Jupyter notebooks. It is designed to help visualize and interact with geographical data.
+
+Useful links:
+
+ - `Documentation and examples <http://jupyter-gmaps.readthedocs.io/en/latest/>`_
+ - `Source code <https://github.com/pbugnion/gmaps>`_
+ - `Issue tracker <https://github.com/pbugnion/gmaps/issues>`_
+
+

@@ -1,14 +1,14 @@
-from .views import *
+from . import views
 from django.urls import path, include
-from google import views as view
+# from disaster_report import views as view
 
 urlpatterns = [
-   path('',view.home, name="home"),
-   path('geocode',view.geocode, name="geocode"),
-   path('geocode/club/<int:pk>',view.geocode_club, name="geocode_club"),
+   path('',views.home, name="home"),
+   path('geocode',views.geocode, name="geocode"),
+   path('geocode/club/<int:pk>',views.geocode_club, name="geocode_club"),
 
-   path('distance',view.distance, name="distance"),
-   path('map',view.map, name="map"),
-   path('mydata',view.mydata, name="mydata"),
-   path('calculate/distance/<int:pk>/<int:pk2>',view.calculate_distance, name="calculate_distance"),
+   path('distance',views.distance, name="distance"),
+   path('map',views.map, name="map"),
+   path('mydata',views.mydata, name="mydata"),
+   path('calculate/distance/<int:pk>/<int:pk2>',views.calculate_distance, name="calculate_distance"),
 ]

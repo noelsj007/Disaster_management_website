@@ -1,53 +1,52 @@
-{% extends 'google/base.html' %}
-{% block content %}
-{% load static %}
+{% extends 'base.html' %} {% block content %} {% load static %}
 
 <script>
+  $(document).ready(function () {
+    $.ajax({
+      url: "{% url 'mydata'%}",
+      method: "GET",
+      success: function (data) {
+        console.log(data);
+        initMap(data);
+      },
+    });
+  });
 
-    $(document).ready(function(){
-        $.ajax({
-            url: "{% url 'mydata'%}",
-            method: 'GET',
-            success: function (data) {
-                console.log(data);
-                initMap(data);
-            }
+  function initMap(data) {
+    const map = new google.maps.Map(document.getElementById("map"), {
+      zoom: 4,
+      center: { lat: 51.5944418, lng: 4.7492914 },
+    });
+    const markers = data?.map((i) => {
+      const marker = new google.maps.Marker({
+        position: { lat: parseFloat(i.latitude), lng: parseFloat(i.longitude) },
+        map: map,
       });
     });
-
-    function initMap(data) {
-       const map = new google.maps.Map(document.getElementById('map'), {
-          zoom: 4,
-          center: {lat: 51.5944418, lng: 4.7492914}
-       });
-       const markers = data?.map((i) => {
-            const marker = new google.maps.Marker({
-                position: { lat: parseFloat(i.latitude), lng: parseFloat(i.longitude)},
-                map: map,
-            })
-        });
-
-     }
-  </script>
-
+  }
+</script>
 
 <div class="pageholder">
-    <div class="titleholder"> 
-        <div class="title"><i class="fas fa-compass mr-2"></i> Google Maps #4: Markers on a map </div>
-        <a href="{% url 'home'%}" class="title2 mr-4"><i class="fas fa-home mr-2"></i> Back to home </a>
+  <div class="titleholder">
+    <div class="title">
+      <i class="fas fa-compass mr-2"></i> Google Maps #4: Markers on a map
     </div>
+    <a class="getstarted scrollto" href="{% url 'validate_disaster' %}">Validate Disaster Report<br></a>
+    </form>
+    <a href="{% url 'home'%}" class="title2 mr-4"
+      ><i class="fas fa-home mr-2"></i> Back to home
+    </a>
+  </div>
 
-    <div class="linkholder">
-        <div class="mapholder">
-            <div id="map"></div>
-            <script
-            src="https://maps.googleapis.com/maps/api/js?key={{AIzaSyA5GLkJRvGDtvKOKXj5iE_oQVTgESKvsJM}}&callback=initMap&v=weekly"
-            defer
-            ></script>
-        </div>
+  <div class="linkholder">
+    <div class="mapholder">
+      <div id="map"></div>
+      <script
+        src="https://maps.googleapis.com/maps/api/js?key={{AIzaSyAtVUwSMDWrAYkYPTYgd8NXAKM73iOB6SM}}&callback=initMap&v=weekly"
+        defer
+      ></script>
     </div>
+  </div>
 </div>
-
-
 
 {% endblock content %}

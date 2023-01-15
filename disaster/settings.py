@@ -38,7 +38,10 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django.contrib.gis',
+    'disaster_report.apps.GoogleConfig',
     'volunteer',
+    'ml_model'
+    # 'disaster_report',
 
 ]
 
@@ -136,3 +139,4 @@ AUTH_USER_MODEL = 'volunteer.CustomUser'
 
 SPATIALITE_LIBRARY_PATH = 'mod_spatialite.so'
 
+GOOGLE_API_KEY = 'AIzaSyAtVUwSMDWrAYkYPTYgd8NXAKM73iOB6SM' #os.environ.get('GOOGLE_API_KEY')

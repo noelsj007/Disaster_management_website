@@ -1,0 +1,21 @@
+
+{% extends 'google/base.html' %}
+{% block content %}
+
+<div class="pageholder">
+    <div class="titleholder"> 
+        <div class="title"><i class="fas fa-people-arrows mr-2"></i> Google Maps #2: Distance </div>
+        <a href="{% url 'home'%}" class="title2 mr-4"><i class="fas fa-home mr-2"></i> Back to home </a>
+    </div>
+
+    <div class="linkholder">
+        <div> <b>The distance is: </b>{{distance}} </div>
+    </div>
+
+    <div class="linkholder">
+        <div><b>The duration is:</b> {{duration}}</div>
+    </div>
+   
+
+</div>
+{% endblock %}

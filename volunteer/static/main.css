@@ -1,0 +1,111 @@
+.pageholder{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.title2{
+    color: white;
+}
+
+.title2:hover{
+    color: rgb(2, 0, 20);
+}
+
+.titleholder,
+.linkholder{
+    display: flex;
+    margin-top: 10px;
+    width: 98%;
+    border-radius: 5px;
+    justify-content: space-between;
+}
+.ourbutton{
+    margin-right: 10px;
+    margin-left: 10px;
+    border-radius: 5px;
+    
+    background-color: rgb(0, 0, 80);
+    color: white
+}
+
+.ourbutton:hover{
+    margin-right: 10px;
+    background-color: rgb(142, 142, 142);
+    color: white
+}
+
+.titleholder{
+    display: 'flex';
+    justify-content:'space-between';
+    background-color: #4267B2;
+    align-items: center;
+    height: 40px;
+}
+
+.linkholder{
+    box-shadow: 0 0 20px rgba(0, 0, 0, .15);
+    justify-content: space-around;
+}
+
+.title{
+    color: white;
+    margin-left: 10px;
+    font-weight: bold;
+    font-size: 15px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.linkbox{
+    display: flex;
+    width:20%;
+    height: 50px;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    border-radius: 5px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, .15);
+
+
+}
+
+
+
+.myTable2{
+    font-size: 12px;
+    width:98%;
+    margin-left: 1%;
+    margin-right: 1%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    min-width: 400px;
+    overflow: hidden;
+    border-radius: 7px 7px 0 0;
+    box-shadow: 0 0 20px rgba(0, 0, 0, .15);
+}
+
+.myTable2 th {
+    background-color: #2D323E;
+    color: white;
+    font-weight: bold;
+  }
+
+.myTable2 td, .myTable th {
+    border: 0.01em solid #e3e2e2;
+  }
+  
+.myTable2 tr:nth-child(even){background-color: #f9f8f8;}
+
+.mapholder{
+    height: 500px;
+    width: 100%;
+}
+
+#map {
+    height: 100%;
+  }
+  

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Nearby Volunteer</title>
+    </head>
+<body>
+    <h1>Nearby Volunteer</h1>
+    {% if shops %}
+    <ul>
+    {% for shop in shops %}
+        <li>
+        {{ shop.first_name }}: {{shop.location}}
+        </li>
+    {% endfor %}
+    </ul>
+    {% endif %}
+</body>
+</html>

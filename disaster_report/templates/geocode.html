@@ -1,0 +1,46 @@
+{% extends 'google/base.html' %}
+{% block content %}
+
+<div class="pageholder">
+    <div class="titleholder"> 
+        <div class="title"><i class="fas fa-compass mr-2"></i> Google Maps #1: Geocoding </div>
+        <a href="{% url 'home'%}" class="title2 mr-4"><i class="fas fa-home mr-2"></i> Back to home </a>
+    </div>
+
+    <div class="linkholder">
+        <table id="ourtable3" class="myTable2">
+            <tr> 
+                <th> Club</th>
+                <th> Adress</th>
+                <th> Zipcode</th>
+                <th> City</th>
+                <th> Country</th>
+                <th> Latitude</th>
+                <th> Longitude</th>
+                <th> Geocode</th>
+            </tr>
+
+            {%for a in clubs%}
+            <tr> 
+                <td> {{a.name}}</td>
+                <td> {{a.adress}}</td>
+                <td> {{a.zipcode}}</td>
+                <td> {{a.city}}</td>
+                <td> {{a.country}}</td>
+                <td> {{a.latitude|default_if_none:"Geocode to see latitude"}}</td>
+                <td> {{a.longitude|default_if_none:"Geocode to see longitude"}}</td>
+                <td> 
+                    {%if a.latitude and a.longitude != None%}
+                        Location info is already geocoded!
+                    {%else%}
+                        <a href="{%url 'geocode_club' a.id%}">Geocode location info! </a>
+                    {%endif%}
+                </td>
+            </tr>
+            {%endfor%}
+        </table>
+    </div>
+   
+
+</div>
+{% endblock %}
